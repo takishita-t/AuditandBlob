@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <Authors>Federico Colombo</Authors>
+    <Description>Audited Web API</Description>
+    <AssemblyName>AuditSample</AssemblyName>
+    <AssemblyTitle>AuditSample</AssemblyTitle>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Audit.WebApi.Core" Version="*" />
+
+  </ItemGroup>
+
+</Project>
