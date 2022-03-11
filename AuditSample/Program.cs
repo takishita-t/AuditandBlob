@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-//Audit追記ここから
+//Audit追記
 builder.Services.AddMvc(mvc =>
 {
     mvc.AddAuditFilter(a => a
@@ -18,7 +18,7 @@ builder.Services.AddMvc(mvc =>
 });
 
 
-//Azure Storage サンプル
+//Azure Blob サンプル
 builder.Services.Configure<BlobSetting>(builder.Configuration.GetSection("Blob"));
 builder.Services.AddSingleton<IBlobService, BlobService>();
 
