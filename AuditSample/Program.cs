@@ -16,6 +16,14 @@ builder.Services.AddMvc(mvc =>
                 .IncludeRequestBody()
                 .IncludeResponseBody());
 });
+
+
+Audit.Core.Configuration.Setup()
+    .UseFileLogProvider(config => config
+        .DirectoryBuilder(_ => $@"./AuditLog/\{DateTime.Now:yyyy-MM-dd}")
+        .FilenameBuilder(auditEvent => $"{auditEvent.Environment.UserName}_{DateTime.Now:HH_mm_ss}.json"));
+
+
 //Azure Blob sample
 builder.Services.Configure<BlobSetting>(builder.Configuration.GetSection("Blob"));
 builder.Services.AddSingleton<IBlobService, BlobService>();
