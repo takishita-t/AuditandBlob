@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuditSample.Controllers
 {
-    [AuditApi]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
